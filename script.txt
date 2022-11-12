@@ -1,0 +1,29 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © vkazakevich
+
+//@version=5
+strategy("My awesome script")
+
+foundamentalCheck() =>
+    true
+
+technicalCheck() =>
+    true
+
+calculateAmount() =>
+    1
+
+goalIsReached() => 
+    true
+
+buy() =>
+    strategy.entry("Buy", strategy.long, calculateAmount())
+
+sell() => 
+    strategy.entry("Close", strategy.short, calculateAmount())
+
+if (foundamentalCheck() and technicalCheck())
+    buy()
+
+if goalIsReached() 
+    sell()
