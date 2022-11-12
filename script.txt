@@ -4,11 +4,39 @@
 //@version=5
 strategy("My awesome script")
 
-foundamentalCheck() =>
+rsiCheck() =>
     true
 
-technicalCheck() =>
+macdCheck() =>
     true
+
+smaCheck() =>
+    true
+
+growCheck() =>
+    true
+
+marginCheck() => 
+    true
+
+peCheck() =>
+    true
+
+capitalizationCheck() =>
+    true
+
+debtFreeCheck() =>
+    true
+
+foundamentalCheck() =>
+    growCheck() and marginCheck() and peCheck() and capitalizationCheck() and debtFreeCheck()
+
+technicalCheck() =>
+    var result = 0
+    result := rsiCheck() ? result + 1 : result
+    result := macdCheck() ? result + 1 : result
+    result := smaCheck() ? result + 1 : result
+    result > 1
 
 calculateAmount() =>
     1
